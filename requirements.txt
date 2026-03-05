@@ -4,3 +4,4 @@
 
 azure-functions
 psycopg2-binary
+azure-eventhub
