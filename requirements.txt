@@ -6,6 +6,8 @@
 #psycopg2-binary
 #azure-eventhub
 #azure-functions-eventhub
+
+
 azure-functions>=1.18.0
-azure-functions-eventhub>=1.2.0
 psycopg2-binary
+azure-eventhub
