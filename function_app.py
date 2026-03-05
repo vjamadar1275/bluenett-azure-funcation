@@ -4,13 +4,9 @@ import azure.functions as func
 app = func.FunctionApp()
 
 @app.function_name(name="eventhub_batch_processor")
-@app.event_hub_message_trigger(
-    arg_name="events",
-    event_hub_name="your-eventhub-name",
-    connection="EventHubConnection",
-    consumer_group="$Default",
-    cardinality="many"   # IMPORTANT → Enables batching
-)
+@app.event_hub_message_trigger(arg_name="azeventhub", event_hub_name="rtu-msg-hub-pre",
+                               connection="twadeventhub_RootManageSharedAccessKey_EVENTHUB",
+                               cardinality = func.Cardinality.MANY) 
 def eventhub_batch_processor(events: list[func.EventHubEvent]):
 
     logging.info(f"Received batch size: {len(events)}")
@@ -20,3 +16,4 @@ def eventhub_batch_processor(events: list[func.EventHubEvent]):
         logging.info(f"Processing message: {body}")
 
     logging.info("Batch processing completed.")
+
