@@ -72,4 +72,6 @@ jobs:
           app-name: 'bluenett-data-func'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8435FCB152C7405BA54C3A850CF40B87 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_148BBCE8F83448EE9A8D77F342166199 }}
+          sku: 'flexconsumption'
+        
